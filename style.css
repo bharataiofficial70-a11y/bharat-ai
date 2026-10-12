@@ -8,96 +8,83 @@
 body {
   background: #f5f7fb;
   color: #172033;
-  line-height: 1.6;
 }
 
 header {
   background: #ffffff;
-  color: #172033;
   padding: 20px;
   text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+header h1 {
   font-size: 28px;
-  font-weight: bold;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  color: #172033;
 }
 
 .hero {
-  padding: 55px 20px;
+  margin: 20px;
+  padding: 35px 20px;
   text-align: center;
+  border-radius: 18px;
   background: linear-gradient(135deg, #fff7ed, #eff6ff);
 }
 
 .hero h1 {
-  font-size: 36px;
+  font-size: 32px;
   margin-bottom: 12px;
 }
 
-.hero h1 span {
-  color: #ff6b00;
-}
-
 .hero p {
-  font-size: 17px;
-  margin-bottom: 22px;
-  color: #475569;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 button {
   background: #ff6b00;
-  color: #ffffff;
+  color: white;
   border: none;
-  padding: 13px 25px;
-  border-radius: 10px;
+  padding: 12px 24px;
+  border-radius: 8px;
   font-size: 16px;
-  font-weight: bold;
   cursor: pointer;
 }
 
-button:hover {
-  background: #e85d00;
-}
-
 .cards {
-  max-width: 1100px;
-  margin: 30px auto;
-  padding: 0 16px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 20px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .card {
-  background: #ffffff;
+  background: white;
   padding: 22px 12px;
-  border-radius: 16px;
+  border-radius: 14px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-  border: 1px solid #e8edf5;
+  box-shadow: 0 3px 12px #0000000d;
 }
 
 .card h3 {
-  color: #172033;
   margin-bottom: 8px;
 }
 
 .card p {
-  color: #64748b;
   font-size: 14px;
+  line-height: 1.5;
 }
 
 footer {
   text-align: center;
   padding: 25px 15px;
   color: #64748b;
-  font-size: 14px;
 }
 
 @media (min-width: 768px) {
   .cards {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .hero h1 {
-    font-size: 44px;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
