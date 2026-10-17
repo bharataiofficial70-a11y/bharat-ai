@@ -1,184 +1,323 @@
+/* 🇮🇳 BHARAT AI — Complete Mobile-Friendly Design */
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #07162f;
+    --header: #12376b;
+    --card: #153968;
+    --text: #f8fafc;
+    --muted: #dbeafe;
+    --orange: #ff6b00;
+    --yellow: #ffb900;
+    --border: #3979b9;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  background: #06152e;
-  color: white;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
 }
 
-header {
-  background: linear-gradient(120deg, #07152f, #123c78);
-  padding: 24px 15px;
-  text-align: center;
-  border-bottom: 2px solid #ff9800;
-}
-
-header h1 {
-  font-size: 32px;
-  color: #ffb300;
-}
-
-.hero {
-  margin: 20px;
-  padding: 35px 20px;
-  text-align: center;
-  border-radius: 22px;
-  background: linear-gradient(135deg, #102f67, #075985);
-  box-shadow: 0 8px 25px #0005;
-}
-
-.hero h1 {
-  font-size: 32px;
-  margin-bottom: 15px;
-  color: #ffffff;
-}
-
-.hero p {
-  font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 22px;
-  color: #e0f2fe;
+button,
+textarea,
+input {
+    font: inherit;
 }
 
 button {
-  background: linear-gradient(90deg, #ff6b00, #ffb000);
-  color: white;
-  border: none;
-  padding: 14px 25px;
-  border-radius: 12px;
-  font-size: 17px;
-  font-weight: bold;
+    border: none;
+    border-radius: 16px;
+    padding: 14px 22px;
+    background: linear-gradient(110deg, var(--orange), var(--yellow));
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    min-height: 48px;
 }
 
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+/* Header */
+
+.site-header {
+    text-align: center;
+    padding: 28px 16px 24px;
+    background: linear-gradient(120deg, #0b1e42, #17477d);
+    border-bottom: 4px solid var(--yellow);
+}
+
+.site-header h1 {
+    margin: 0;
+    color: var(--yellow);
+    font-size: clamp(30px, 7vw, 48px);
+    line-height: 1.3;
+}
+
+.site-header p {
+    margin: 5px 0 0;
+    font-size: clamp(17px, 4vw, 24px);
+}
+
+/* Hero */
+
+.hero {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 38px 24px;
+    width: calc(100% - 32px);
+    text-align: center;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #173c77, #086184);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero h2 {
+    font-size: clamp(30px, 7vw, 52px);
+    margin: 12px 0;
+    line-height: 1.25;
+}
+
+.hero p {
+    max-width: 750px;
+    margin: 16px auto 26px;
+    color: var(--muted);
+    font-size: clamp(17px, 4vw, 23px);
+}
+
+.hero button {
+    min-width: 190px;
+    font-size: 19px;
+}
+
+/* Feature cards */
+
 .cards {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  padding: 20px;
-  max-width: 1100px;
-  margin: auto;
+    width: calc(100% - 32px);
+    max-width: 1100px;
+    margin: 35px auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
 }
 
 .card {
-  background: linear-gradient(145deg, #163d79, #0b2349);
-  padding: 24px 10px;
-  border-radius: 18px;
-  text-align: center;
-  border: 1px solid #3474b9;
-  box-shadow: 0 5px 15px #0004;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 22px 16px;
+    border: 2px solid var(--border);
+    border-radius: 28px;
+    background: linear-gradient(145deg, #1b4278, #10294e);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
 }
 
-.card h3 {
-  margin-bottom: 10px;
-  color: #ffd166;
-  font-size: 19px;
+.card h2 {
+    color: #ffd166;
+    font-size: clamp(19px, 4.5vw, 29px);
+    line-height: 1.3;
+    margin: 8px 0 12px;
+    overflow-wrap: anywhere;
 }
 
 .card p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #e2e8f0;
+    color: var(--muted);
+    font-size: clamp(15px, 3.8vw, 20px);
+    margin: 0 0 18px;
+    overflow-wrap: anywhere;
 }
 
-footer {
-  text-align: center;
-  padding: 25px 15px;
-  color: #cbd5e1;
-  border-top: 1px solid #29476c;
+.card button {
+    width: 100%;
+    margin-top: auto;
+    padding: 14px 10px;
+    font-size: clamp(15px, 3.8vw, 21px);
+    overflow-wrap: anywhere;
 }
 
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
+/* Feature content panel */
 
-  .hero h1 {
-    font-size: 42px;
-  }
-}
-/* Bharat AI Chat Interface */
-
-#bharatChatBox {
-    position: fixed;
-    inset: 10px;
-    z-index: 99999;
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
+.feature-panel {
+    width: calc(100% - 24px);
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 24px;
+    border-radius: 25px;
     background: #ffffff;
     color: #172033;
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.22);
-    font-family: Arial, sans-serif;
+    overflow-wrap: anywhere;
+    scroll-margin-top: 12px;
+}
+
+.feature-panel[hidden] {
+    display: none !important;
+}
+
+.feature-panel h2 {
+    font-size: clamp(25px, 6vw, 36px);
+    line-height: 1.3;
+    margin: 8px 0;
+}
+
+.feature-panel p,
+.feature-panel li {
+    font-size: 18px;
+}
+
+.feature-panel ul {
+    padding-left: 24px;
+}
+
+.feature-panel li {
+    margin: 12px 0;
+}
+
+.feature-panel button {
+    margin: 5px 4px 5px 0;
+}
+
+.feature-panel a {
+    color: #0757b7;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.close-button {
+    margin-bottom: 8px;
+}
+
+/* Quiz */
+
+#quizResult {
+    font-weight: 700;
+    margin-top: 18px;
+}
+
+/* Footer */
+
+footer {
+    margin-top: 45px;
+    padding: 28px 16px;
+    text-align: center;
+    border-top: 2px solid #23476e;
+    color: #dbeafe;
+    font-size: clamp(15px, 3.8vw, 20px);
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* AI Teacher chat window */
+
+#bharatChatBox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 12px;
+    max-width: 600px;
+    max-height: calc(100dvh - 24px);
+    margin: auto;
+    flex-direction: column;
+    overflow: hidden;
+    border: 2px solid var(--border);
+    border-radius: 22px;
+    background: #ffffff;
+    color: #172033;
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.45);
 }
 
 .bharat-chat-header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 16px;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: linear-gradient(120deg, #12376b, #075985);
     color: white;
-    background: linear-gradient(135deg, #ff6b00, #ff8f3d);
 }
 
 .bharat-chat-header h2 {
     margin: 0;
-    font-size: 21px;
+    font-size: 23px;
 }
 
 .bharat-chat-header p {
-    margin: 5px 0 0;
-    font-size: 12px;
+    margin: 2px 0 0;
 }
 
 #closeBharatChat {
-    width: 38px;
-    height: 38px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
+    min-width: 44px;
+    padding: 8px 12px;
+    background: #ff6b00;
 }
 
 .bharat-messages {
-    display: flex;
     flex: 1;
-    flex-direction: column;
-    gap: 12px;
-    overflow-y: auto;
+    min-height: 100px;
     padding: 16px;
-    background: #f5f7fb;
+    overflow-y: auto;
+    overscroll-behavior: contain;
 }
 
 .bharat-message {
-    max-width: 85%;
+    max-width: 95%;
     padding: 12px 14px;
-    border-radius: 16px;
-    font-size: 15px;
-    line-height: 1.6;
+    margin: 10px 0;
+    border-radius: 15px;
     overflow-wrap: anywhere;
-    white-space: pre-wrap;
 }
 
 .ai-message {
+    background: #eef4ff;
+    color: #172033;
     align-self: flex-start;
-    background: white;
-    border: 1px solid #e2e8f0;
-    border-bottom-left-radius: 5px;
 }
 
 .user-message {
-    align-self: flex-end;
-    background: #ff6b00;
-    color: white;
-    border-bottom-right-radius: 5px;
+    background: #d9fbe8;
+    color: #123b2b;
+    margin-left: auto;
+    white-space: pre-wrap;
+}
+
+.bharat-message p {
+    margin: 7px 0;
+}
+
+.bharat-message h1,
+.bharat-message h2,
+.bharat-message h3 {
+    line-height: 1.3;
+    margin: 10px 0;
+}
+
+.bharat-message pre,
+.bharat-message code {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
 }
 
 .bharat-chat-form {
@@ -186,8 +325,8 @@ footer {
     align-items: flex-end;
     gap: 8px;
     padding: 12px;
+    border-top: 1px solid #d5dce5;
     background: white;
-    border-top: 1px solid #e2e8f0;
 }
 
 #bharatQuestion {
@@ -195,43 +334,76 @@ footer {
     min-width: 0;
     max-height: 120px;
     resize: vertical;
+    border: 1px solid #a8b5c7;
+    border-radius: 12px;
     padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 14px;
-    outline: none;
-    font: inherit;
-    font-size: 15px;
-}
-
-#bharatQuestion:focus {
-    border-color: #ff6b00;
+    color: #172033;
+    background: white;
 }
 
 #bharatSend {
-    padding: 13px 15px;
-    border: none;
-    border-radius: 12px;
-    background: #ff6b00;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-#bharatSend:disabled {
-    opacity: 0.6;
-    cursor: wait;
+    padding: 12px 15px;
+    min-width: 85px;
 }
 
 .bharat-chat-note {
-    padding: 6px;
+    padding: 6px 12px;
     text-align: center;
-    color: #64748b;
-    background: white;
-    font-size: 11px;
+    color: #526174;
+    font-size: 12px;
+    background: #f8fafc;
 }
 
-@media (min-width: 700px) {
+/* Small mobile screens */
+
+@media (max-width: 360px) {
+    .cards {
+        gap: 10px;
+        width: calc(100% - 20px);
+    }
+
+    .card {
+        padding: 16px 10px;
+        border-radius: 20px;
+    }
+
+    .hero {
+        padding: 28px 16px;
+    }
+
+    .feature-panel {
+        padding: 18px;
+    }
+}
+
+/* Tablet and desktop */
+
+@media (min-width: 800px) {
+    .cards {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .hero {
+        padding: 50px 35px;
+    }
+
     #bharatChatBox {
-        inset: 5% 15%;
+        inset: auto 24px 24px auto;
+        height: min(700px, calc(100dvh - 48px));
+        width: min(600px, calc(100vw - 48px));
+    }
+}
+
+/* Respect reduced motion settings */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
     }
 }
