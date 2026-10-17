@@ -289,3 +289,138 @@ async function sendBharatMessage(event) {
         }
     }
 }
+// Bharat AI - Feature Pages
+
+function openFeature(feature) {
+    const panel = document.getElementById("featurePanel");
+    const content = document.getElementById("featureContent");
+
+    const pages = {
+        courses: `
+            <h2>📚 Free Courses</h2>
+            <p>Choose a skill to start learning.</p>
+            <ul>
+                <li><button onclick="showLesson('digital')">Digital Skills</button></li>
+                <li><button onclick="showLesson('computer')">Computer Basics</button></li>
+                <li><button onclick="showLesson('english')">English Learning</button></li>
+                <li><button onclick="showLesson('earning')">Online Earning Skills</button></li>
+            </ul>
+        `,
+
+        notes: `
+            <h2>📝 Learning Notes</h2>
+            <p>Choose a topic to explore.</p>
+            <button onclick="showLesson('digital')">Digital Skills Notes</button>
+            <button onclick="showLesson('computer')">Computer Notes</button>
+            <button onclick="showLesson('english')">English Notes</button>
+        `,
+
+        quiz: `
+            <h2>🎯 Bharat AI Quiz</h2>
+            <p>What does CPU stand for?</p>
+            <button onclick="checkQuiz(this, false)">Central Program Unit</button>
+            <button onclick="checkQuiz(this, true)">Central Processing Unit</button>
+            <button onclick="checkQuiz(this, false)">Computer Personal Unit</button>
+            <p id="quizResult" aria-live="polite"></p>
+        `,
+
+        jobs: `
+            <h2>💼 Jobs & Careers</h2>
+            <p>Official job information and opportunities:</p>
+            <p><a href="https://www.ncs.gov.in/" target="_blank" rel="noopener">National Career Service — Government of India</a></p>
+            <p>Check eligibility and details on the official website before applying.</p>
+        `,
+
+        schemes: `
+            <h2>🏛️ Government Schemes</h2>
+            <p>Explore official government information:</p>
+            <p><a href="https://www.myscheme.gov.in/" target="_blank" rel="noopener">myScheme — Government Scheme Finder</a></p>
+            <p>Eligibility and benefits depend on the scheme.</p>
+        `,
+
+        farmers: `
+            <h2>🌾 Farmer Resources</h2>
+            <p>Useful official resources for farmers:</p>
+            <p><a href="https://pmkisan.gov.in/" target="_blank" rel="noopener">PM-KISAN official website</a></p>
+            <p><a href="https://agmarknet.gov.in/" target="_blank" rel="noopener">Agmarknet — Agricultural market information</a></p>
+            <p>Check current rules and updates on the official portals.</p>
+        `,
+
+        profile: `
+            <h2>👤 My Learning Profile</h2>
+            <p>Welcome to Bharat AI!</p>
+            <p>Your learning journey starts here.</p>
+            <p>Founder: Atif Rajput</p>
+            <p>Profile saving and login will be added in a future update.</p>
+        `
+    };
+
+    if (!pages[feature]) {
+        content.textContent = "This feature is not available yet.";
+        panel.hidden = false;
+        panel.scrollIntoView({ behavior: "smooth" });
+        return;
+    }
+
+    content.innerHTML = pages[feature];
+    panel.hidden = false;
+    panel.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function closeFeature() {
+    document.getElementById("featurePanel").hidden = true;
+}
+
+function showLesson(topic) {
+    const lessons = {
+        digital: {
+            title: "Digital Skills",
+            text: "Learn to use the internet safely, create email accounts, identify online scams and use digital services."
+        },
+        computer: {
+            title: "Computer Basics",
+            text: "Learn about the keyboard, mouse, files, folders, browsers and basic computer operations."
+        },
+        english: {
+            title: "English Learning",
+            text: "Start with everyday greetings: Hello means Namaste. Thank you means Dhanyavaad. How are you? means Aap kaise hain?"
+        },
+        earning: {
+            title: "Online Earning Skills",
+            text: "Learn video editing, graphic design, writing and social media management. Start by practising, build a portfolio and apply for genuine work. Never pay someone who promises guaranteed income."
+        }
+    };
+
+    const lesson = lessons[topic];
+    if (!lesson) return;
+
+    const content = document.getElementById("featureContent");
+
+    content.innerHTML = "";
+
+    const heading = document.createElement("h2");
+    heading.textContent = lesson.title;
+
+    const paragraph = document.createElement("p");
+    paragraph.textContent = lesson.text;
+
+    const backButton = document.createElement("button");
+    backButton.textContent = "← Back to Courses";
+    backButton.onclick = () => openFeature("courses");
+
+    content.append(heading, paragraph, backButton);
+    document.getElementById("featurePanel").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+function checkQuiz(button, correct) {
+    const result = document.getElementById("quizResult");
+
+    if (correct) {
+        result.textContent = "✅ Correct! CPU means Central Processing Unit.";
+    } else {
+        result.textContent = "❌ Not quite. Try again!";
+    }
+}
