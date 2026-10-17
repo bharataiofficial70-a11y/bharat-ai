@@ -3,89 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0f172a">
-  <meta name="description" content="Bharat AI - Free learning, AI Teacher, courses, quizzes and useful resources for everyone.">
-  <title>Bharat AI - Seekho. Badho. Badlo.</title>
+  <meta name="theme-color" content="#0b1730">
+  <meta name="description" content="Bharat AI — Free learning, AI Teacher, courses, quizzes, jobs, government schemes and farming resources.">
+  <title>Bharat AI — Seekho. Badho. Badlo.</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<header class="site-header">
   <h1>🇮🇳 Bharat AI</h1>
   <p>Seekho. Badho. Badlo.</p>
 </header>
 
-<section class="hero">
-  <h1>Hello, India! 👋</h1>
-  <p>
-    Learn new skills, explore opportunities and build a better future
-    with Bharat AI.
-  </p>
-  <button onclick="startLearning()">Get Started 🚀</button>
-</section>
+<main>
+  <section class="hero">
+    <h2>Hello, India! 👋</h2>
+    <p>Learn new skills, explore opportunities and build a better future with Bharat AI.</p>
+    <button onclick="startLearning()">Get Started 🚀</button>
+  </section>
 
-<section class="cards">
+  <section class="cards" aria-label="Bharat AI features">
 
-  <div class="card">
-    <h3>🤖 AI Teacher</h3>
-    <p>Learn new things and get answers to your questions.</p>
-    <button onclick="openAITeacher()">Ask AI Teacher</button>
-  </div>
+    <article class="card">
+      <h2>🤖 AI Teacher</h2>
+      <p>Ask questions and learn in Hindi or English.</p>
+      <button onclick="openAITeacher()">Ask AI Teacher</button>
+    </article>
 
-  <div class="card">
-    <h3>📚 Free Courses</h3>
-    <p>Discover useful skills and educational resources.</p>
-    <button onclick="openFeature('courses')">Explore Courses</button>
-  </div>
+    <article class="card">
+      <h2>📚 Free Courses</h2>
+      <p>Learn useful skills step by step.</p>
+      <button onclick="openFeature('courses')">Explore Courses</button>
+    </article>
 
-  <div class="card">
-    <h3>📝 Notes</h3>
-    <p>Explore notes and learning materials.</p>
-    <button onclick="openFeature('notes')">Open Notes</button>
-  </div>
+    <article class="card">
+      <h2>📝 Notes</h2>
+      <p>Read and revise useful learning notes.</p>
+      <button onclick="openFeature('notes')">Open Notes</button>
+    </article>
 
-  <div class="card">
-    <h3>🎯 Quiz</h3>
-    <p>Test your knowledge and improve your skills.</p>
-    <button onclick="openFeature('quiz')">Start Quiz</button>
-  </div>
+    <article class="card">
+      <h2>🎯 Quiz</h2>
+      <p>Test your knowledge and check your score.</p>
+      <button onclick="openFeature('quiz')">Start Quiz</button>
+    </article>
 
-  <div class="card">
-    <h3>💼 Jobs</h3>
-    <p>Explore job opportunities and career information.</p>
-    <button onclick="openFeature('jobs')">Explore Jobs</button>
-  </div>
+    <article class="card">
+      <h2>💼 Jobs</h2>
+      <p>Explore career information and job resources.</p>
+      <button onclick="openFeature('jobs')">Explore Jobs</button>
+    </article>
 
-  <div class="card">
-    <h3>🏛️ Government Schemes</h3>
-    <p>Discover information about government schemes.</p>
-    <button onclick="openFeature('schemes')">Explore Schemes</button>
-  </div>
+    <article class="card">
+      <h2>🏛️ Government Schemes</h2>
+      <p>Find official information about schemes.</p>
+      <button onclick="openFeature('schemes')">Explore Schemes</button>
+    </article>
 
-  <div class="card">
-    <h3>🌾 Farmers</h3>
-    <p>Find useful farming information and resources.</p>
-    <button onclick="openFeature('farmers')">Farmer Resources</button>
-  </div>
+    <article class="card">
+      <h2>🌾 Farmers</h2>
+      <p>Find farming and agricultural resources.</p>
+      <button onclick="openFeature('farmers')">Farmer Resources</button>
+    </article>
 
-  <div class="card">
-    <h3>👤 Profile</h3>
-    <p>Your learning journey starts here.</p>
-    <button onclick="openFeature('profile')">Open Profile</button>
-  </div>
+    <article class="card">
+      <h2>👤 Profile</h2>
+      <p>Keep track of your learning progress.</p>
+      <button onclick="openFeature('profile')">Open Profile</button>
+    </article>
 
-</section>
+  </section>
 
-<section id="featurePanel" hidden
-  style="max-width:900px;margin:25px auto;padding:20px;
-  background:white;color:#172033;border-radius:16px;">
-  <button onclick="closeFeature()">✕ Close</button>
-  <div id="featureContent"></div>
-</section>
+  <section id="featurePanel" class="feature-panel" hidden>
+    <button class="close-button" onclick="closeFeature()">✕ Close</button>
+    <div id="featureContent"></div>
+  </section>
+</main>
 
 <footer>
   <p>🇮🇳 Bharat AI — Seekho. Badho. Badlo.</p>
-  <p>Founder: <b>Atif Rajput</b></p>
+  <p>Founder: <strong>Atif Rajput</strong></p>
   <p>Free learning opportunities for everyone.</p>
 </footer>
 
